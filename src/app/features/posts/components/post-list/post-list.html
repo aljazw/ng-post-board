@@ -31,10 +31,10 @@
                     Comments
                 </button>
                 <span class="ml-4">
-                    <button mat-icon-button>
+                    <button (click)="openEditDialog(post)" mat-icon-button>
                         <mat-icon fontSet="material-symbols-outlined">edit_square</mat-icon>
                     </button>
-                    <button mat-icon-button >
+                    <button mat-icon-button (click)="openDeleteDialog(post)" >
                         <mat-icon class="mat-text-error" fontSet="material-symbols-outlined">delete</mat-icon>
                     </button>
                 </span>

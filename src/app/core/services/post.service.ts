@@ -12,8 +12,8 @@ export class PostService {
       this.posts.push({
         id: i,
         title: `Post Title ${i}`,
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus...',
-        author: `User ${i % 5 + 1}`,
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus',
+        author: `User test`,
         createdAt: new Date(2025, 10, 20)
       });
     }

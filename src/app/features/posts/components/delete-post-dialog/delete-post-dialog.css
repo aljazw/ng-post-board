@@ -1,0 +1,7 @@
+.delete-fab {
+    background-color: var(--mat-sys-error) !important;
+    color: white;
+}
+.cancel-fab {
+    color: var(--mat-sys-secondary) !important;
+}
