@@ -1,16 +1,16 @@
-import { Component, inject, model } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogActions, MatDialogClose, MatDialogRef, MatDialogTitle, MatDialogContent } from '@angular/material/dialog';
-import { Post } from '../../post.model';
-import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogRef, MatDialogTitle } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Post } from '../../post.model';
 import { PostService } from '../../../../core/services/post.service';
 
 @Component({
-  selector: 'app-edit-post-dialog',
+  selector: 'app-add-post-dialog',
   imports: [
     MatIconModule,
     ReactiveFormsModule,
@@ -22,20 +22,19 @@ import { PostService } from '../../../../core/services/post.service';
     MatDialogContent,
     MatDialogTitle
 ],
-  templateUrl: './edit-post-dialog.html',
-  styleUrl: './edit-post-dialog.css',
+  templateUrl: './add-post-dialog.html',
+  styleUrl: './add-post-dialog.css',
 })
-export class EditPostDialog {
+export class AddPostDialog {
 
   readonly snackBar = inject(MatSnackBar);
-  readonly dialogRef = inject(MatDialogRef<EditPostDialog>);
-  readonly data = inject<Post>(MAT_DIALOG_DATA);
-  readonly post = model(this.data)
+  readonly dialogRef = inject(MatDialogRef<AddPostDialog>);
   readonly postService = inject(PostService);
+
 
   form: FormGroup = inject(FormBuilder).group({
     title: [
-      this.data.title,
+      '',
       [
         Validators.required,
         Validators.maxLength(15),
@@ -43,7 +42,7 @@ export class EditPostDialog {
       ]
     ],
     author: [
-      this.data.author,
+      '',
       [
         Validators.required,
         Validators.maxLength(15),
@@ -51,7 +50,7 @@ export class EditPostDialog {
       ]
     ],
     content: [
-      this.data.content,
+      '',
       [
         Validators.required,
         Validators.maxLength(150),
@@ -59,17 +58,15 @@ export class EditPostDialog {
     ],
   })
 
-  onSave(): void {
-    if (this.form.valid && this.post()?.id != null) {
+  onCreate(): void {
+    if (this.form.valid) {
 
       const newPost: Post = this.form.value;
-      newPost.createdAt = this.post().createdAt;
+      newPost.createdAt = new Date();
 
-      const id = this.post()!.id!;
-
-      this.postService.updatePost(id, newPost).subscribe({
+      this.postService.createPost(newPost).subscribe({
         next: (createdPost) => {
-          this.snackBar.open('Post edited successfully', 'Close', {
+          this.snackBar.open('Post created successfully', 'Close', {
             duration: 5000,
             horizontalPosition: 'center',
             verticalPosition: 'bottom',
@@ -80,13 +77,13 @@ export class EditPostDialog {
           this.dialogRef.close(createdPost);
         },
         error: (err) => {
-           this.snackBar.open('Failed to edit post', 'Close', {
+           this.snackBar.open('Failed to create post', 'Close', {
             duration: 5000,
             horizontalPosition: 'center',
             verticalPosition: 'bottom',
             panelClass: ['snackbar-error']
           });
-          console.log("Failed to edit post because: ", err)
+          console.log("Failed to create post because: ", err)
         }
       })
 
@@ -100,4 +97,5 @@ export class EditPostDialog {
     }
   }
  
+
 }

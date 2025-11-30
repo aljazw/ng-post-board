@@ -1,7 +1,7 @@
-import { Component, inject, OnInit,  } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit, signal,  } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Post } from '../../post.model';
 import { PostService } from '../../../../core/services/post.service';
@@ -10,60 +10,95 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { EditPostDialog } from '../edit-post-dialog/edit-post-dialog';
 import { DeletePostDialog } from '../delete-post-dialog/delete-post-dialog';
+import { AddPostDialog } from '../add-post-dialog/add-post-dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { finalize, forkJoin } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-post-list',
   imports: [
     MatSlideToggleModule, 
-    MatPaginator, 
+    MatPaginatorModule, 
     MatCardModule, 
     MatIconModule, 
     CommonModule,
     MatButtonModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
   ], 
   templateUrl: './post-list.html',
   styleUrl: './post-list.css',
 })
 export class PostList implements OnInit{
-  posts: Post[] = [];
-  pagedPosts: Post[] = [];
 
   readonly dialog = inject(MatDialog);
+  readonly snackBar = inject(MatSnackBar)
+  readonly postService = inject(PostService)
 
+  EditPostDialog = EditPostDialog;    
+  DeletePostDialog = DeletePostDialog;
+  AddPostDialog = AddPostDialog;
+
+  posts: Post[]  = [];
+  totalPosts = signal(0);             
   pageSize = 6;
   currentPage = 0;
+  loading = signal(false);
 
-  constructor (private postService: PostService) {}
-  
   ngOnInit(): void {
-    this.posts = this.postService.getPosts();
-    this.updatePagedPosts();
+    this.loadData();     
   }
-
 
   onPageChange(event: PageEvent) {
     this.pageSize = event.pageSize;
     this.currentPage = event.pageIndex;
-    this.updatePagedPosts();
+    this.loadData();
   }
 
-  updatePagedPosts() {
+  openPostDialog(component: any, post?: Post) {
+    const dialogRef = this.dialog.open(component, {
+      data: { ...post }
+    });
+    dialogRef.afterClosed().subscribe(() => {
+        setTimeout(() => this.loadData());
+    });
+  }
+
+  loadData() {
     const start = this.currentPage * this.pageSize;
-    const end = start + this.pageSize;
-    this.pagedPosts = this.posts.slice(start, end);
-  }
+    this.loading.set(true);
 
-  openEditDialog(post: Post) {
-    this.dialog.open(EditPostDialog, {
-      data: { ...post }
+    forkJoin({
+      posts: this.postService.getPosts({ start, limit: this.pageSize }),
+      total: this.postService.countPosts()
     })
+    .pipe(
+      finalize(() => {
+        this.loading.set(false);
+      })
+    )
+    .subscribe({
+      next: (result) => {
+        this.posts = result.posts;
+        this.totalPosts.set(result.total);
+      },
+      error: (err) => {
+        console.error(err);
+        this.launchErrorSnackBar(
+          err.status === 0 ? "Server is not responding" : "Something went wrong"
+        );
+      }
+    });
   }
 
-  openDeleteDialog(post: Post) {
-    this.dialog.open(DeletePostDialog, {
-      data: { ...post }
-    })
+  launchErrorSnackBar(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      panelClass: ['snackbar-error']
+    });
   }
-
+  
 }

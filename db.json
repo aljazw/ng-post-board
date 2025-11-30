@@ -1,0 +1,361 @@
+{
+  "posts": [
+    {
+      "title": "Funny Cat Pic",
+      "author": "Anna Smith",
+      "content": "Just saw a cat wearing sunglasses. I think it judged me.",
+      "createdAt": "2025-11-20T00:00:00Z",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "Pizza Day",
+      "content": "Ate pizza for breakfast. Who said you can't have dessert first?",
+      "author": "Bob Jones",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Dog Meme",
+      "content": "Dog barked at vacuum cleaner today. My hero!",
+      "author": "Charlie Ray",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "title": "Work From Bed",
+      "author": "Dana White",
+      "content": "Tried working from bed. Ended up napping instead. Productivity: 0%",
+      "createdAt": "2025-11-20T00:00:00Z",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "title": "Coffee Fail",
+      "content": "Spilled coffee on my shirt. Monday vibes activated.",
+      "author": "Eli Brown",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 6,
+      "title": "Socks Missing",
+      "content": "I swear my washing machine eats one sock every week.",
+      "author": "Fiona Lee",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 7,
+      "title": "Zoom Life",
+      "content": "Accidentally turned on cat filter in Zoom meeting. Everyone laughed.",
+      "author": "George Hill",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 8,
+      "title": "Snack Time",
+      "content": "Ate chips and chocolate together. Don’t judge, it’s art.",
+      "author": "Holly Kim",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 9,
+      "title": "Plant Talk",
+      "content": "Talked to my plants today. They seemed unbothered.",
+      "author": "Ian Scott",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 10,
+      "title": "Laundry Day",
+      "content": "Forgot laundry in washing machine. Smells like regret.",
+      "author": "Jill Adams",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 11,
+      "title": "Movie Night",
+      "content": "Watched a movie and accidentally finished the snacks before it started.",
+      "author": "Karl Fox",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 12,
+      "title": "Baking Fun",
+      "content": "Baked cookies that looked like rocks, tasted amazing though!",
+      "author": "Lara Moon",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 13,
+      "title": "Lost Keys",
+      "content": "Spent 20 minutes looking for my keys. They were in my hand.",
+      "author": "Mike Nash",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 14,
+      "title": "Gym Fail",
+      "content": "Went to gym. Lifted wrong weight. Embarrassing but funny.",
+      "author": "Nina Cole",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 15,
+      "title": "Dog Walk",
+      "content": "Walked my dog. Dog walked me more. Classic story.",
+      "author": "Oscar Lane",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 16,
+      "title": "Rain Day",
+      "content": "Forgot my umbrella. Got soaked. Now I look like a wet noodle.",
+      "author": "Paula King",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 17,
+      "title": "Tech Trouble",
+      "content": "Laptop froze in the middle of my presentation. Smile and wave, boys.",
+      "author": "Quinn Day",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 18,
+      "title": "Snack Panic",
+      "content": "Dropped cookie on floor. One second of hesitation. Ate it anyway.",
+      "author": "Rita Hall",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 19,
+      "title": "Late Night",
+      "content": "Stayed up too late watching funny videos. Zero regrets.",
+      "author": "Sam West",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 20,
+      "title": "Traffic Jam",
+      "content": "Stuck in traffic, practiced my air guitar skills. Rock on.",
+      "author": "Tina Fox",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 21,
+      "title": "Coffee Spill",
+      "content": "Spilled coffee on keyboard. Typing with sticky fingers now.",
+      "author": "Uma Lee",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 22,
+      "title": "Nap Time",
+      "content": "Took a nap. Dreamt I was late for a meeting. Woke up late.",
+      "author": "Victor Day",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 23,
+      "title": "Snack Attack",
+      "content": "Ate a whole bag of chips. My stomach is questioning my life choices.",
+      "author": "Wendy Hill",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 24,
+      "title": "Lost Pen",
+      "content": "Lost my pen. Found it in my hair. How did it get there?",
+      "author": "Xander Ray",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 25,
+      "title": "Cat Nap",
+      "content": "Cat stole my laptop spot. Guess I work on the floor now.",
+      "author": "Yara Moon",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 26,
+      "title": "Snack Party",
+      "content": "Accidentally ate all the snacks before party started. Oops.",
+      "author": "Zack Cole",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 27,
+      "title": "Funny Shirt",
+      "content": "Wore a shirt inside out. Pretended it was fashion.",
+      "author": "Amy Ray",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 28,
+      "title": "Laptop Freeze",
+      "content": "Laptop froze during Zoom. Pretended I was frozen too.",
+      "author": "Ben Hill",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 29,
+      "title": "Snack Fail",
+      "content": "Dropped ice cream on floor. Ate it anyway. No regrets.",
+      "author": "Cara Lee",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 30,
+      "title": "Cat Meme",
+      "content": "Sent a cat meme to boss accidentally. He loved it.",
+      "author": "Dan West",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 31,
+      "title": "Pizza Fail",
+      "content": "Burned pizza in oven. Ordered delivery instead. Win-win.",
+      "author": "Ella Fox",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 32,
+      "title": "Sleepy Dog",
+      "content": "Dog slept on my homework. Cute, but not helpful.",
+      "author": "Fred King",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 33,
+      "title": "Coffee Break",
+      "content": "Coffee tasted amazing today. Small joys count.",
+      "author": "Gina Hill",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 34,
+      "title": "Rain Walk",
+      "content": "Walked in rain. Forgot umbrella. Loved every second.",
+      "author": "Hank Lee",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 35,
+      "title": "Lost Keys",
+      "content": "Keys were in pocket the whole time. Classic me.",
+      "author": "Ivy Fox",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 36,
+      "title": "Snack Time",
+      "content": "Ate chocolate for breakfast. Don’t judge me.",
+      "author": "Jack Ray",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 37,
+      "title": "Funny Cat",
+      "content": "Cat knocked over my cup. Hilarious, but sad.",
+      "author": "Kate Moon",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 38,
+      "title": "Zoom Fail",
+      "content": "Forgot to unmute in Zoom. Everyone laughed.",
+      "author": "Leo Hill",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 39,
+      "title": "Laptop Nap",
+      "content": "Fell asleep on laptop. Still finished work somehow.",
+      "author": "Mia King",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 40,
+      "title": "Pizza Time",
+      "content": "Ordered pizza at 2 AM. Best decision ever.",
+      "author": "Nick Fox",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 41,
+      "title": "Dog Meme",
+      "content": "Shared dog meme in chat. Everyone laughed hard.",
+      "author": "Olga Lee",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 42,
+      "title": "Coffee Joy",
+      "content": "Coffee was perfect today. Celebrating small wins.",
+      "author": "Paul Ray",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 43,
+      "title": "Cat Video",
+      "content": "Watched cat video. Laughed for 10 minutes straight.",
+      "author": "Quinn Fox",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 44,
+      "title": "Snack Time",
+      "content": "Ate cookie before lunch. Life is good.",
+      "author": "Rita Moon",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 45,
+      "title": "Rain Fun",
+      "content": "Danced in the rain. People stared. I didn’t care.",
+      "author": "Steve Hill",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 46,
+      "title": "Laptop Fail",
+      "content": "Laptop crashed. Pretended to restart it calmly.",
+      "author": "Tina Lee",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 47,
+      "title": "Funny Meme",
+      "content": "Sent meme to wrong chat. Everyone enjoyed it anyway.",
+      "author": "Uma Fox",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 48,
+      "title": "Cat Nap",
+      "content": "Cat slept on my keyboard. Work continued slowly.",
+      "author": "Victor Hill",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 49,
+      "title": "Pizza Joy",
+      "content": "Ate pizza and ice cream at same time. Delicious chaos.",
+      "author": "Wendy Lee",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "id": 50,
+      "title": "Sleepy Dog",
+      "content": "Dog fell asleep on my shoes. Can’t move them now.",
+      "author": "Xander Fox",
+      "createdAt": "2025-11-20T00:00:00Z"
+    },
+    {
+      "title": "joze",
+      "author": "testtttttt",
+      "content": "this\n\n",
+      "createdAt": "2025-11-30T17:32:36.756Z",
+      "id": 56
+    }
+  ]
+}
