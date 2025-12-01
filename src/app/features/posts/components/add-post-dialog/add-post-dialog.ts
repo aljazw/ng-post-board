@@ -1,13 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogRef, MatDialogTitle } from '@angular/material/dialog';
+import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogModule, MatDialogRef, MatDialogTitle } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Post } from '../../post.model';
 import { PostService } from '../../../../core/services/post.service';
+import { SnackbarService } from '../../../../shared/services/snackbar.service';
 
 @Component({
   selector: 'app-add-post-dialog',
@@ -17,6 +17,7 @@ import { PostService } from '../../../../core/services/post.service';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatDialogModule,
     MatDialogActions,
     MatDialogClose,
     MatDialogContent,
@@ -27,9 +28,9 @@ import { PostService } from '../../../../core/services/post.service';
 })
 export class AddPostDialog {
 
-  readonly snackBar = inject(MatSnackBar);
   readonly dialogRef = inject(MatDialogRef<AddPostDialog>);
   readonly postService = inject(PostService);
+  readonly snackbar = inject(SnackbarService);
 
 
   form: FormGroup = inject(FormBuilder).group({
@@ -66,34 +67,19 @@ export class AddPostDialog {
 
       this.postService.createPost(newPost).subscribe({
         next: (createdPost) => {
-          this.snackBar.open('Post created successfully', 'Close', {
-            duration: 5000,
-            horizontalPosition: 'center',
-            verticalPosition: 'bottom',
-            panelClass: ['snackbar-success']
-          });
-          console.log(createdPost)
-
+          this.snackbar.show('Post created successfully', 'success');
           this.dialogRef.close(createdPost);
         },
         error: (err) => {
-           this.snackBar.open('Failed to create post', 'Close', {
-            duration: 5000,
-            horizontalPosition: 'center',
-            verticalPosition: 'bottom',
-            panelClass: ['snackbar-error']
-          });
-          console.log("Failed to create post because: ", err)
+          this.snackbar.show(
+            err.status === 0 ? "Server is not responding" : "Failed to create post",
+            'error'
+          );
         }
       })
 
     } else {
-      this.snackBar.open('Form submission failed! Please check your input', 'Close', {
-        duration: 5000,
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-        panelClass: 'snackbar-error'
-      });
+      this.snackbar.show('Form submission failed! Please check your input', 'error');
     }
   }
  

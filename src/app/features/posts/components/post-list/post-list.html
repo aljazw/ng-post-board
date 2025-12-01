@@ -22,15 +22,15 @@
                     <p class="mt-2 mat-text-on-surface-variant text-sm">By {{ post.author }}</p>
 
                     <div class="flex justify-between mt-4 items-center w-full text-xl">
-                        <button matFab extended class="comment-fab">
+                        <button matFab extended class="comment-fab" (click)="openPostDialog(CommentListDialog, post)">
                             <mat-icon fontSet="material-symbols-outlined">chat_bubble</mat-icon>
                             Comments
                         </button>
                         <span class="ml-4">
-                            <button (click)="openPostDialog(EditPostDialog, post)" mat-icon-button>
+                            <button (click)="openPostDialog(EditPostDialog, post)" matIconButton>
                                 <mat-icon fontSet="material-symbols-outlined">edit_square</mat-icon>
                             </button>
-                            <button mat-icon-button (click)="openPostDialog(DeletePostDialog, post)" >
+                            <button matIconButton (click)="openPostDialog(DeletePostDialog, post)" >
                                 <mat-icon class="mat-text-error" fontSet="material-symbols-outlined">delete</mat-icon>
                             </button>
                         </span>

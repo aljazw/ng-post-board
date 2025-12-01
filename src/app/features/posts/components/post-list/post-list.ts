@@ -13,7 +13,8 @@ import { DeletePostDialog } from '../delete-post-dialog/delete-post-dialog';
 import { AddPostDialog } from '../add-post-dialog/add-post-dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { finalize, forkJoin } from 'rxjs';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { CommentListDialog } from '../../../comments/components/comment-list-dialog/comment-list-dialog';
+import { SnackbarService } from '../../../../shared/services/snackbar.service';
 
 @Component({
   selector: 'app-post-list',
@@ -33,12 +34,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class PostList implements OnInit{
 
   readonly dialog = inject(MatDialog);
-  readonly snackBar = inject(MatSnackBar)
   readonly postService = inject(PostService)
+  readonly snackbar = inject(SnackbarService);
 
   EditPostDialog = EditPostDialog;    
   DeletePostDialog = DeletePostDialog;
   AddPostDialog = AddPostDialog;
+  CommentListDialog = CommentListDialog;
 
   posts: Post[]  = [];
   totalPosts = signal(0);             
@@ -60,8 +62,10 @@ export class PostList implements OnInit{
     const dialogRef = this.dialog.open(component, {
       data: { ...post }
     });
-    dialogRef.afterClosed().subscribe(() => {
-        setTimeout(() => this.loadData());
+    dialogRef.afterClosed().subscribe(result => {
+      if (result !== true) {
+        this.loadData();
+      }
     });
   }
 
@@ -84,20 +88,11 @@ export class PostList implements OnInit{
         this.totalPosts.set(result.total);
       },
       error: (err) => {
-        console.error(err);
-        this.launchErrorSnackBar(
-          err.status === 0 ? "Server is not responding" : "Something went wrong"
+        this.snackbar.show(
+          err.status === 0 ? "Server is not responding" : "Failed to load posts",
+          'error'
         );
       }
-    });
-  }
-
-  launchErrorSnackBar(message: string) {
-    this.snackBar.open(message, 'Close', {
-      duration: 5000,
-      horizontalPosition: 'center',
-      verticalPosition: 'bottom',
-      panelClass: ['snackbar-error']
     });
   }
   

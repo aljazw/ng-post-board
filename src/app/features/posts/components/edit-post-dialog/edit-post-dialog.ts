@@ -6,8 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { PostService } from '../../../../core/services/post.service';
+import { SnackbarService } from '../../../../shared/services/snackbar.service';
 
 @Component({
   selector: 'app-edit-post-dialog',
@@ -27,11 +27,11 @@ import { PostService } from '../../../../core/services/post.service';
 })
 export class EditPostDialog {
 
-  readonly snackBar = inject(MatSnackBar);
   readonly dialogRef = inject(MatDialogRef<EditPostDialog>);
   readonly data = inject<Post>(MAT_DIALOG_DATA);
   readonly post = model(this.data)
   readonly postService = inject(PostService);
+  readonly snackbar = inject(SnackbarService);
 
   form: FormGroup = inject(FormBuilder).group({
     title: [
@@ -69,34 +69,19 @@ export class EditPostDialog {
 
       this.postService.updatePost(id, newPost).subscribe({
         next: (createdPost) => {
-          this.snackBar.open('Post edited successfully', 'Close', {
-            duration: 5000,
-            horizontalPosition: 'center',
-            verticalPosition: 'bottom',
-            panelClass: ['snackbar-success']
-          });
-          console.log(createdPost)
-
+          this.snackbar.show('Post edited successfully', 'success');
           this.dialogRef.close(createdPost);
         },
         error: (err) => {
-           this.snackBar.open('Failed to edit post', 'Close', {
-            duration: 5000,
-            horizontalPosition: 'center',
-            verticalPosition: 'bottom',
-            panelClass: ['snackbar-error']
-          });
-          console.log("Failed to edit post because: ", err)
+          this.snackbar.show(
+            err.status === 0 ? "Server is not responding" : "Failed to edit post",
+            'error'
+          );
         }
       })
 
     } else {
-      this.snackBar.open('Form submission failed! Please check your input', 'Close', {
-        duration: 5000,
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-        panelClass: 'snackbar-error'
-      });
+      this.snackbar.show('Form submission failed! Please check your input', 'error');
     }
   }
  

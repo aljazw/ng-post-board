@@ -50,11 +50,11 @@
       "createdAt": "2025-11-20T00:00:00Z"
     },
     {
-      "id": 8,
       "title": "Snack Time",
-      "content": "Ate chips and chocolate together. Don’t judge, it’s art.",
       "author": "Holly Kim",
-      "createdAt": "2025-11-20T00:00:00Z"
+      "content": "Ate chips and chocolate together. Don’t judge, it’s art.",
+      "createdAt": "2025-11-20T00:00:00Z",
+      "id": 8
     },
     {
       "id": 9,
@@ -351,11 +351,345 @@
       "createdAt": "2025-11-20T00:00:00Z"
     },
     {
-      "title": "joze",
-      "author": "testtttttt",
-      "content": "this\n\n",
+      "title": "this",
+      "author": "test",
+      "content": "joze\n\n",
       "createdAt": "2025-11-30T17:32:36.756Z",
       "id": 56
+    },
+    {
+      "title": "tests",
+      "author": "test",
+      "content": "test",
+      "createdAt": "2025-12-01T01:12:38.891Z",
+      "id": 57
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "postId": 1,
+      "title": "Great post!",
+      "author": "Alice",
+      "content": "Really enjoyed reading it.",
+      "createdAt": "2025-11-30T10:15:00Z"
+    },
+    {
+      "id": 2,
+      "postId": 1,
+      "title": "Thanks!",
+      "author": "Bob",
+      "content": "Learned a lot from this post.",
+      "createdAt": "2025-11-30T11:20:00Z"
+    },
+    {
+      "id": 3,
+      "postId": 2,
+      "title": "Interesting",
+      "author": "Charlie",
+      "content": "Interesting perspective on this topic.",
+      "createdAt": "2025-11-30T09:50:00Z"
+    },
+    {
+      "id": 4,
+      "postId": 2,
+      "title": "Agree",
+      "author": "Diana",
+      "content": "I totally agree with your points.",
+      "createdAt": "2025-11-30T12:10:00Z"
+    },
+    {
+      "id": 5,
+      "postId": 3,
+      "title": "Question",
+      "author": "Eve",
+      "content": "Could you explain a bit more about this part?",
+      "createdAt": "2025-11-30T08:30:00Z"
+    },
+    {
+      "id": 6,
+      "postId": 3,
+      "title": "Worked!",
+      "author": "Frank",
+      "content": "I tried this myself and it worked perfectly.",
+      "createdAt": "2025-11-30T10:00:00Z"
+    },
+    {
+      "id": 7,
+      "postId": 11,
+      "title": "First comment post 11",
+      "author": "Will",
+      "content": "First comment on post 11!",
+      "createdAt": "2025-11-30T19:45:00Z"
+    },
+    {
+      "id": 8,
+      "postId": 11,
+      "title": "Second comment post 11",
+      "author": "Xena",
+      "content": "Second comment here.",
+      "createdAt": "2025-11-30T20:00:00Z"
+    },
+    {
+      "id": 9,
+      "postId": 1,
+      "title": "Nice!",
+      "author": "Grace",
+      "content": "This post really helped me understand the topic.",
+      "createdAt": "2025-11-30T10:45:00Z"
+    },
+    {
+      "id": 10,
+      "postId": 1,
+      "title": "Useful",
+      "author": "Hank",
+      "content": "Thanks for the clear explanation.",
+      "createdAt": "2025-11-30T11:10:00Z"
+    },
+    {
+      "id": 11,
+      "postId": 2,
+      "title": "Good example",
+      "author": "Ivy",
+      "content": "I like how you gave an example for this.",
+      "createdAt": "2025-11-30T09:20:00Z"
+    },
+    {
+      "id": 12,
+      "postId": 2,
+      "title": "Clarify",
+      "author": "Jack",
+      "content": "Could you clarify the second point?",
+      "createdAt": "2025-11-30T12:40:00Z"
+    },
+    {
+      "id": 13,
+      "postId": 3,
+      "title": "Awesome",
+      "author": "Karen",
+      "content": "Really awesome content!",
+      "createdAt": "2025-11-30T08:50:00Z"
+    },
+    {
+      "id": 14,
+      "postId": 3,
+      "title": "Helpful tips",
+      "author": "Leo",
+      "content": "These tips are very helpful, thanks!",
+      "createdAt": "2025-11-30T10:20:00Z"
+    },
+    {
+      "id": 15,
+      "postId": 4,
+      "title": "Agree",
+      "author": "Mona",
+      "content": "Totally agree with this.",
+      "createdAt": "2025-11-30T09:05:00Z"
+    },
+    {
+      "id": 16,
+      "postId": 4,
+      "title": "Clear",
+      "author": "Nate",
+      "content": "Explanation is very clear.",
+      "createdAt": "2025-11-30T10:35:00Z"
+    },
+    {
+      "id": 17,
+      "postId": 5,
+      "title": "Informative",
+      "author": "Olivia",
+      "content": "Very informative post.",
+      "createdAt": "2025-11-30T11:25:00Z"
+    },
+    {
+      "id": 18,
+      "postId": 5,
+      "title": "Thanks",
+      "author": "Paul",
+      "content": "Thanks for sharing your insight.",
+      "createdAt": "2025-11-30T12:05:00Z"
+    },
+    {
+      "id": 19,
+      "postId": 6,
+      "title": "Good read",
+      "author": "Quinn",
+      "content": "I really enjoyed reading this.",
+      "createdAt": "2025-11-30T08:40:00Z"
+    },
+    {
+      "id": 20,
+      "postId": 6,
+      "title": "Helpful",
+      "author": "Rachel",
+      "content": "Very helpful content, thank you.",
+      "createdAt": "2025-11-30T09:55:00Z"
+    },
+    {
+      "id": 21,
+      "postId": 7,
+      "title": "Excellent",
+      "author": "Steve",
+      "content": "Excellent explanation and details.",
+      "createdAt": "2025-11-30T10:10:00Z"
+    },
+    {
+      "id": 22,
+      "postId": 7,
+      "title": "Nice one",
+      "author": "Tina",
+      "content": "Nice one, learned a lot!",
+      "createdAt": "2025-11-30T11:00:00Z"
+    },
+    {
+      "id": 23,
+      "postId": 8,
+      "title": "Helpful guide",
+      "author": "Uma",
+      "content": "This guide is very helpful.",
+      "createdAt": "2025-11-30T12:20:00Z"
+    },
+    {
+      "id": 24,
+      "postId": 8,
+      "title": "Good explanation",
+      "author": "Victor",
+      "content": "Good explanation of the topic.",
+      "createdAt": "2025-11-30T12:35:00Z"
+    },
+    {
+      "id": 25,
+      "postId": 9,
+      "title": "Informative",
+      "author": "Wendy",
+      "content": "Informative content, thanks!",
+      "createdAt": "2025-11-30T13:00:00Z"
+    },
+    {
+      "id": 26,
+      "postId": 9,
+      "title": "Clear explanation",
+      "author": "Xander",
+      "content": "Clear explanation and easy to follow.",
+      "createdAt": "2025-11-30T13:25:00Z"
+    },
+    {
+      "id": 27,
+      "postId": 10,
+      "title": "Helpful tips",
+      "author": "Yara",
+      "content": "Helpful tips, thanks a lot!",
+      "createdAt": "2025-11-30T13:45:00Z"
+    },
+    {
+      "id": 28,
+      "postId": 10,
+      "title": "Thanks",
+      "author": "Zane",
+      "content": "Thanks for this post.",
+      "createdAt": "2025-11-30T14:00:00Z"
+    },
+    {
+      "id": 29,
+      "postId": 1,
+      "title": "Another comment",
+      "author": "Amy",
+      "content": "Adding another comment to post 1.",
+      "createdAt": "2025-11-30T14:15:00Z"
+    },
+    {
+      "id": 30,
+      "postId": 2,
+      "title": "Another insight",
+      "author": "Ben",
+      "content": "Additional insight for post 2.",
+      "createdAt": "2025-11-30T14:30:00Z"
+    },
+    {
+      "id": 31,
+      "postId": 3,
+      "title": "Great info",
+      "author": "Clara",
+      "content": "Great information here.",
+      "createdAt": "2025-11-30T14:45:00Z"
+    },
+    {
+      "id": 32,
+      "postId": 4,
+      "title": "Useful content",
+      "author": "Dan",
+      "content": "Very useful content.",
+      "createdAt": "2025-11-30T15:00:00Z"
+    },
+    {
+      "id": 33,
+      "postId": 5,
+      "title": "Excellent read",
+      "author": "Ella",
+      "content": "Excellent read, thanks for sharing.",
+      "createdAt": "2025-11-30T15:15:00Z"
+    },
+    {
+      "id": 34,
+      "postId": 6,
+      "title": "Nice explanation",
+      "author": "Finn",
+      "content": "Nice explanation on this topic.",
+      "createdAt": "2025-11-30T15:30:00Z"
+    },
+    {
+      "id": 35,
+      "postId": 7,
+      "title": "Learned something",
+      "author": "Gina",
+      "content": "Learned something new today.",
+      "createdAt": "2025-11-30T15:45:00Z"
+    },
+    {
+      "id": 36,
+      "postId": 8,
+      "title": "Thanks!",
+      "author": "Henry",
+      "content": "Thanks, this helped me understand.",
+      "createdAt": "2025-11-30T16:00:00Z"
+    },
+    {
+      "id": 37,
+      "postId": 9,
+      "title": "Very informative",
+      "author": "Iris",
+      "content": "Very informative, appreciate it.",
+      "createdAt": "2025-11-30T16:15:00Z"
+    },
+    {
+      "id": 38,
+      "postId": 10,
+      "title": "Helpful advice",
+      "author": "Jackie",
+      "content": "Helpful advice for sure!",
+      "createdAt": "2025-11-30T16:30:00Z"
+    },
+    {
+      "author": "t",
+      "content": "d",
+      "createdAt": "2025-12-01T00:00:47.831Z",
+      "postId": 2,
+      "id": 39
+    },
+    {
+      "author": "g",
+      "content": "g",
+      "createdAt": "2025-12-01T00:00:56.570Z",
+      "postId": 2,
+      "id": 40
+    },
+    {
+      "author": "ddd",
+      "content": "dfdddddfsfsfjaf;sjj;faj;lfjsjlafjl;f;aljs;jlf;ljsal;jfl;jalj;fsljljfalj;fs;jlfjl;alsjfljaslj;falj;fjl;salj;fjlajlfajl;",
+      "createdAt": "2025-12-01T00:02:03.627Z",
+      "postId": 2,
+      "id": 41
     }
   ]
 }
