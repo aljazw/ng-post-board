@@ -10,7 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './comment-item.css',
 })
 export class CommentItem {
-
   @Input() comment!: Comment;
-
 }

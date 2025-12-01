@@ -1,10 +1,6 @@
 <span class="flex justify-between items-center">
   <h3 mat-dialog-title>Comments</h3>
-  <button
-    matIconButton
-    [mat-dialog-close]="true"
-    class="mr-3 mat-text-on-surface-varian"
-  >
+  <button matIconButton [mat-dialog-close]="true" class="mr-3 mat-text-on-surface-varian">
     <mat-icon fontSet="material-symbols-outlined">close</mat-icon>
   </button>
 </span>
@@ -13,18 +9,16 @@
   <p class="mb-3">Your thoughts go here →. Bonus points if they make us laugh.</p>
 
   @if (showForm() && post().id !== undefined) {
-    <app-create-comment-form 
+    <app-create-comment-form
       (cancelComment)="onChildrenCancelled($event)"
       [postId]="post().id!"
-      ></app-create-comment-form>
+    ></app-create-comment-form>
   } @else {
     <div class="flex justify-center mb-10">
-      <button matButton class="add-comment-fab" (click)="onCreate()">
-          + Add Comment
-      </button>
+      <button matButton class="add-comment-fab" (click)="onCreate()">+ Add Comment</button>
     </div>
   }
-  
+
   @if (loading()) {
     <span class="flex justify-center items-center mt-10 pb-5">
       <mat-spinner [diameter]="50"></mat-spinner>
@@ -33,12 +27,10 @@
     @for (comment of comments(); track comment.id) {
       <div class="flex justify-between mb-5 ml-5">
         <app-comment-item [comment]="comment"></app-comment-item>
-        <button matIconButton (click)="openDeleteDialog(comment)" >
+        <button matIconButton (click)="openDeleteDialog(comment)">
           <mat-icon class="mat-text-error" fontSet="material-symbols-outlined">delete</mat-icon>
         </button>
       </div>
     }
   }
-  
 </div>
-

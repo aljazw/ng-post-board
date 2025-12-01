@@ -8,9 +8,8 @@ describe('AddPostDialog', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddPostDialog]
-    })
-    .compileComponents();
+      imports: [AddPostDialog],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AddPostDialog);
     component = fixture.componentInstance;

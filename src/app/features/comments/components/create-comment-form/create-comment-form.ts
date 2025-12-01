@@ -9,45 +9,27 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-create-comment-form',
-  imports: [
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-
-  ],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
   templateUrl: './create-comment-form.html',
   styleUrl: './create-comment-form.css',
 })
 export class CreateCommentForm {
-
   readonly snackbar = inject(SnackbarService);
   readonly commentService = inject(CommentService);
 
-  @Input() postId!: number;  
+  @Input() postId!: number;
   @Output() cancelComment = new EventEmitter<boolean>();
 
   form: FormGroup = inject(FormBuilder).group({
     author: [
       '',
-      [
-        Validators.required,
-        Validators.maxLength(15),
-        Validators.pattern('^[a-zA-Z0-9 ]*$')
-      ]
+      [Validators.required, Validators.maxLength(15), Validators.pattern('^[a-zA-Z0-9 ]*$')],
     ],
-    content: [
-      '',
-      [
-        Validators.required,
-        Validators.maxLength(150),
-      ]
-    ],
-  })
+    content: ['', [Validators.required, Validators.maxLength(150)]],
+  });
 
   onSubmit(): void {
     if (this.form.valid) {
-
       const newComment: Comment = this.form.value;
       newComment.createdAt = new Date();
       newComment.postId = this.postId;
@@ -59,12 +41,11 @@ export class CreateCommentForm {
         },
         error: (err) => {
           this.snackbar.show(
-            err.status === 0 ? "Server is not responding" : "Failed to create post",
-            'error'
+            err.status === 0 ? 'Server is not responding' : 'Failed to create post',
+            'error',
           );
-        }
-      })
-
+        },
+      });
     } else {
       this.snackbar.show('Form submission failed! Please check your input', 'error');
     }
@@ -73,5 +54,4 @@ export class CreateCommentForm {
   onCancel() {
     this.cancelComment.emit(false);
   }
-
 }

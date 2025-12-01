@@ -8,9 +8,8 @@ describe('CommentListDialog', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommentListDialog]
-    })
-    .compileComponents();
+      imports: [CommentListDialog],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CommentListDialog);
     component = fixture.componentInstance;

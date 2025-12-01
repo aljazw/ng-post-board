@@ -5,9 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root',
 })
 export class SnackbarService {
-
-  readonly snackBar = inject(MatSnackBar)
-
+  readonly snackBar = inject(MatSnackBar);
 
   show(message: string, type: 'success' | 'error' | 'info' = 'info') {
     const duration = 5000;
@@ -29,8 +27,7 @@ export class SnackbarService {
       duration,
       horizontalPosition: 'center',
       verticalPosition: 'bottom',
-      panelClass
+      panelClass,
     });
   }
-  
 }

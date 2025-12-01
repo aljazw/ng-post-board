@@ -1,12 +1,12 @@
 <div class="flex gap-3">
-    <mat-icon>person</mat-icon>
-    <div class="flex flex-col gap-1 break-words w-sm">
-        <span class="flex gap-4">  
-            <span>{{comment.author}}</span>
-            <p class="mat-text-disabled">
-            • <span class="ml-1">{{comment.createdAt | date:'MMM d, y, h:mm a'}}</span>
-            </p>
-        </span>
-        <p class="mat-text-on-surface-variant">{{comment.content}}</p>
-    </div>
+  <mat-icon>person</mat-icon>
+  <div class="flex flex-col gap-1 break-words w-sm">
+    <span class="flex gap-4">
+      <span>{{ comment.author }}</span>
+      <p class="mat-text-disabled">
+        • <span class="ml-1">{{ comment.createdAt | date: 'MMM d, y, h:mm a' }}</span>
+      </p>
+    </span>
+    <p class="mat-text-on-surface-variant">{{ comment.content }}</p>
+  </div>
 </div>

@@ -1,9 +1,7 @@
-
-  <h1 mat-dialog-title class="text-xl font-bold m-0 p-0">Edit Post</h1>
-  <mat-dialog-content>
+<h1 mat-dialog-title class="text-xl font-bold m-0 p-0">Edit Post</h1>
+<mat-dialog-content>
   <p class="text-gray-500 mt-1 mb-6">Update the details of your post</p>
   <form [formGroup]="form">
-
     <mat-form-field appearance="fill" class="w-full">
       <mat-label>Title</mat-label>
       <input matInput formControlName="title" />
@@ -20,7 +18,7 @@
 
     <mat-form-field class="w-full">
       <mat-label>Author</mat-label>
-      <input matInput formControlName="author"  />
+      <input matInput formControlName="author" />
       @if (form.get('author')?.hasError('required')) {
         <mat-error>Author is required</mat-error>
       }
@@ -32,7 +30,7 @@
       }
     </mat-form-field>
 
-    <mat-form-field  class="w-full">
+    <mat-form-field class="w-full">
       <mat-label>Content</mat-label>
       <textarea matInput formControlName="content" rows="4"></textarea>
       @if (form.get('content')?.hasError('required')) {
@@ -42,15 +40,10 @@
         <mat-error>Max 150 chars</mat-error>
       }
     </mat-form-field>
-
   </form>
-
 </mat-dialog-content>
 
 <mat-dialog-actions>
   <button matButton class="cancel-fab" [mat-dialog-close]="true">Close</button>
   <button matButton="filled" (click)="onSave()">Update</button>
 </mat-dialog-actions>
-
-
-

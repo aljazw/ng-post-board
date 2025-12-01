@@ -1,26 +1,26 @@
 .custom-fab {
-  background-color: var(--mat-sys-inverse-surface); 
-  color: var(--mat-sys-surface);                  
-  box-shadow: none;   
-  height: 40px;           
-  padding: 0 16px;       
-  font-size: 14px;     
-  border-radius: 8px;         
+  background-color: var(--mat-sys-inverse-surface);
+  color: var(--mat-sys-surface);
+  box-shadow: none;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+  border-radius: 8px;
 }
 
 .comment-fab {
-    flex: 1;
-    box-shadow: none;
-    background-color:  var(--mat-sys-surface-container-low);
-    color: var(--mat-sys-onSurface);
-    height: 2.7rem;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-radius: 0.5rem;
-} 
+  flex: 1;
+  box-shadow: none;
+  background-color: var(--mat-sys-surface-container-low);
+  color: var(--mat-sys-onSurface);
+  height: 2.7rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: 0.5rem;
+}
 
 .comment-fab:hover {
-    border: 0.8px solid color-mix(in srgb, var(--mat-sys-on-surface) 25%, transparent);
-    background-color: none;
-    box-shadow: none;  
+  border: 0.8px solid color-mix(in srgb, var(--mat-sys-on-surface) 25%, transparent);
+  background-color: none;
+  box-shadow: none;
 }

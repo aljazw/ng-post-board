@@ -1,13 +1,18 @@
 import { Component, inject, model, OnInit, signal, WritableSignal } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogTitle } from '@angular/material/dialog';
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogModule,
+  MatDialogTitle,
+} from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { CommentService } from '../../../../core/services/comment.service';
 import { Comment } from '../../comment.model';
 import { Post } from '../../../posts/post.model';
 import { SnackbarService } from '../../../../shared/services/snackbar.service';
-import { CommentItem } from "../comment-item/comment-item";
+import { CommentItem } from '../comment-item/comment-item';
 import { MatButtonModule } from '@angular/material/button';
-import { CreateCommentForm } from "../create-comment-form/create-comment-form";
+import { CreateCommentForm } from '../create-comment-form/create-comment-form';
 import { DeleteCommentDialog } from '../delete-comment-dialog/delete-comment-dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
@@ -21,12 +26,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     CreateCommentForm,
     MatDialogTitle,
     MatProgressSpinnerModule,
-],
+  ],
   templateUrl: './comment-list-dialog.html',
   styleUrl: './comment-list-dialog.css',
 })
-export class CommentListDialog implements OnInit{
-
+export class CommentListDialog implements OnInit {
   readonly dialog = inject(MatDialog);
   readonly commentService = inject(CommentService);
   readonly snackbar = inject(SnackbarService);
@@ -36,8 +40,6 @@ export class CommentListDialog implements OnInit{
   comments: WritableSignal<Comment[]> = signal([]);
   showForm = signal(false);
   loading = signal(false);
-
-
 
   ngOnInit(): void {
     this.loadComments();
@@ -67,19 +69,17 @@ export class CommentListDialog implements OnInit{
       },
       error: (err) => {
         this.snackbar.show(
-          err.status === 0
-            ? "Server is not responding"
-            : "Failed to load comments",
-          'error'
+          err.status === 0 ? 'Server is not responding' : 'Failed to load comments',
+          'error',
         );
         this.loading.set(false);
-      }
+      },
     });
   }
 
   openDeleteDialog(comment: Comment) {
     const dialogRef = this.dialog.open(DeleteCommentDialog, {
-      data: { ...comment }
+      data: { ...comment },
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result !== 'no-reload') {
@@ -87,6 +87,4 @@ export class CommentListDialog implements OnInit{
       }
     });
   }
-
-
 }
