@@ -356,13 +356,6 @@
       "content": "joze\n\n",
       "createdAt": "2025-11-30T17:32:36.756Z",
       "id": 56
-    },
-    {
-      "title": "tests",
-      "author": "test",
-      "content": "test",
-      "createdAt": "2025-12-01T01:12:38.891Z",
-      "id": 57
     }
   ],
   "comments": [
@@ -671,25 +664,18 @@
       "createdAt": "2025-11-30T16:30:00Z"
     },
     {
-      "author": "t",
-      "content": "d",
-      "createdAt": "2025-12-01T00:00:47.831Z",
-      "postId": 2,
-      "id": 39
-    },
-    {
-      "author": "g",
-      "content": "g",
-      "createdAt": "2025-12-01T00:00:56.570Z",
-      "postId": 2,
-      "id": 40
-    },
-    {
       "author": "ddd",
       "content": "dfdddddfsfsfjaf;sjj;faj;lfjsjlafjl;f;aljs;jlf;ljsal;jfl;jalj;fsljljfalj;fs;jlfjl;alsjfljaslj;falj;fjl;salj;fjlajlfajl;",
       "createdAt": "2025-12-01T00:02:03.627Z",
       "postId": 2,
       "id": 41
+    },
+    {
+      "author": "tester",
+      "content": "this is a test comment",
+      "createdAt": "2025-12-01T10:54:08.456Z",
+      "postId": 2,
+      "id": 42
     }
   ]
 }

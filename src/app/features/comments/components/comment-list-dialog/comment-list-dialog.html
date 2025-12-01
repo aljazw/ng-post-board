@@ -25,14 +25,20 @@
     </div>
   }
   
-
-  @for (comment of comments(); track comment.id) {
-    <div class="flex justify-between mb-5 ml-5">
-      <app-comment-item [comment]="comment"></app-comment-item>
-      <button matIconButton (click)="openDeleteDialog(comment)" >
-        <mat-icon class="mat-text-error" fontSet="material-symbols-outlined">delete</mat-icon>
-      </button>
-    </div>
+  @if (loading()) {
+    <span class="flex justify-center items-center mt-10 pb-5">
+      <mat-spinner [diameter]="50"></mat-spinner>
+    </span>
+  } @else {
+    @for (comment of comments(); track comment.id) {
+      <div class="flex justify-between mb-5 ml-5">
+        <app-comment-item [comment]="comment"></app-comment-item>
+        <button matIconButton (click)="openDeleteDialog(comment)" >
+          <mat-icon class="mat-text-error" fontSet="material-symbols-outlined">delete</mat-icon>
+        </button>
+      </div>
+    }
   }
+  
 </div>
 

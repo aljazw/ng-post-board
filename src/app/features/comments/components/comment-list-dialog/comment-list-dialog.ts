@@ -9,6 +9,7 @@ import { CommentItem } from "../comment-item/comment-item";
 import { MatButtonModule } from '@angular/material/button';
 import { CreateCommentForm } from "../create-comment-form/create-comment-form";
 import { DeleteCommentDialog } from '../delete-comment-dialog/delete-comment-dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-comment-list-dialog',
@@ -19,6 +20,7 @@ import { DeleteCommentDialog } from '../delete-comment-dialog/delete-comment-dia
     MatButtonModule,
     CreateCommentForm,
     MatDialogTitle,
+    MatProgressSpinnerModule,
 ],
   templateUrl: './comment-list-dialog.html',
   styleUrl: './comment-list-dialog.css',
@@ -33,6 +35,7 @@ export class CommentListDialog {
 
   comments: WritableSignal<Comment[]> = signal([]);
   showForm = signal(false);
+  loading = signal(false);
 
 
 
@@ -52,6 +55,7 @@ export class CommentListDialog {
   }
 
   loadComments(): void {
+    this.loading.set(true);
     const id = this.post()?.id ?? null;
 
     if (id === null) return;
@@ -59,6 +63,7 @@ export class CommentListDialog {
     this.commentService.getComments(id).subscribe({
       next: (data: Comment[]) => {
         this.comments.set(data);
+        this.loading.set(false);
       },
       error: (err) => {
         this.snackbar.show(
@@ -67,6 +72,7 @@ export class CommentListDialog {
             : "Failed to load comments",
           'error'
         );
+        this.loading.set(false);
       }
     });
   }
