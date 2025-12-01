@@ -2,7 +2,6 @@ import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatLabel } from '@angular/material/select';
 import { Comment } from '../../comment.model';
 import { SnackbarService } from '../../../../shared/services/snackbar.service';
 import { CommentService } from '../../../../core/services/comment.service';
@@ -26,7 +25,7 @@ export class CreateCommentForm {
   readonly commentService = inject(CommentService);
 
   @Input() postId!: number;  
-  @Output() cancel = new EventEmitter<boolean>();
+  @Output() cancelComment = new EventEmitter<boolean>();
 
   form: FormGroup = inject(FormBuilder).group({
     author: [
@@ -56,7 +55,7 @@ export class CreateCommentForm {
       this.commentService.createComment(newComment).subscribe({
         next: () => {
           this.snackbar.show('Post created successfully', 'success');
-          this.cancel.emit(false);
+          this.cancelComment.emit(false);
         },
         error: (err) => {
           this.snackbar.show(
@@ -72,7 +71,7 @@ export class CreateCommentForm {
   }
 
   onCancel() {
-    this.cancel.emit(false);
+    this.cancelComment.emit(false);
   }
 
 }

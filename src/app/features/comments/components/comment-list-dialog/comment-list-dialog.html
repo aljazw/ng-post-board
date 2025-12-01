@@ -12,9 +12,9 @@
 <div mat-dialog-content>
   <p class="mb-3">Your thoughts go here →. Bonus points if they make us laugh.</p>
 
-  @if (showForm() && post().id != null) {
+  @if (showForm() && post().id !== undefined) {
     <app-create-comment-form 
-      (cancel)="onChildrenCancelled($event)"
+      (cancelComment)="onChildrenCancelled($event)"
       [postId]="post().id!"
       ></app-create-comment-form>
   } @else {

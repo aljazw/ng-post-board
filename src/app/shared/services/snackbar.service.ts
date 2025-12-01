@@ -10,7 +10,7 @@ export class SnackbarService {
 
 
   show(message: string, type: 'success' | 'error' | 'info' = 'info') {
-    let duration = 5000;
+    const duration = 5000;
     let panelClass: string[] | undefined;
 
     switch (type) {

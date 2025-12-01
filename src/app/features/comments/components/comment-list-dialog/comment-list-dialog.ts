@@ -1,5 +1,5 @@
-import { Component, inject, model, signal, WritableSignal } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogContent, MatDialogModule, MatDialogRef, MatDialogTitle } from '@angular/material/dialog';
+import { Component, inject, model, OnInit, signal, WritableSignal } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogTitle } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { CommentService } from '../../../../core/services/comment.service';
 import { Comment } from '../../comment.model';
@@ -25,7 +25,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   templateUrl: './comment-list-dialog.html',
   styleUrl: './comment-list-dialog.css',
 })
-export class CommentListDialog {
+export class CommentListDialog implements OnInit{
 
   readonly dialog = inject(MatDialog);
   readonly commentService = inject(CommentService);

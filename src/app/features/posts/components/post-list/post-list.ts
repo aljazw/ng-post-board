@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, OnInit, signal,  } from '@angular/core';
+import { Component, inject, OnInit, signal, Type,  } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
@@ -58,16 +58,18 @@ export class PostList implements OnInit{
     this.loadData();
   }
 
-  openPostDialog(component: any, post?: Post) {
+  openPostDialog<T>(component: Type<T>, post?: Post) {
     const dialogRef = this.dialog.open(component, {
       data: { ...post }
     });
+
     dialogRef.afterClosed().subscribe(result => {
       if (result !== true) {
         this.loadData();
       }
     });
   }
+
 
   loadData() {
     const start = this.currentPage * this.pageSize;
