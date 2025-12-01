@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Comment } from '../../features/comments/comment.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CommentService {
 
-  private readonly  baseUrl = 'http://localhost:3000/comments';
+    private readonly baseUrl = `${environment.apiUrl}/comments`;
   private readonly http = inject(HttpClient);
 
   getComments(postId: number): Observable<Comment[]> {

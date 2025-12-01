@@ -337,11 +337,11 @@
       "createdAt": "2025-11-20T00:00:00Z"
     },
     {
-      "id": 49,
       "title": "Pizza Joy",
-      "content": "Ate pizza and ice cream at same time. Delicious chaos.",
       "author": "Wendy Lee",
-      "createdAt": "2025-11-20T00:00:00Z"
+      "content": "Ate pizza and ice cream at same time. Delicious chaos.",
+      "createdAt": "2025-11-20T00:00:00Z",
+      "id": 49
     },
     {
       "id": 50,

@@ -2,13 +2,14 @@ import { inject, Injectable } from '@angular/core';
 import { Post } from '../../features/posts/post.model';
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { catchError, map, Observable, throwError } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
 
-  private readonly  baseUrl = 'http://localhost:3000/posts';
+  private readonly baseUrl = `${environment.apiUrl}/posts`;
   private readonly http = inject(HttpClient);
 
   getPosts(params?: { start?: number; limit?: number }): Observable<Post[]> {
