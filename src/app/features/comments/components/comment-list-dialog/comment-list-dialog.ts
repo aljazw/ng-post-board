@@ -81,8 +81,10 @@ export class CommentListDialog {
     const dialogRef = this.dialog.open(DeleteCommentDialog, {
       data: { ...comment }
     });
-    dialogRef.afterClosed().subscribe(() => {
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result !== 'no-reload') {
         this.loadComments();
+      }
     });
   }
 
