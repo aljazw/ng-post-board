@@ -6,7 +6,7 @@ This project is a **simple Angular application** for managing posts. It connects
 
 - **Dashboard**: Overview of all posts
 - **CRUD** functionality
-- **Lazy Loading**
+- **Pagination**
 
 ## 🛠️ Tech Stack
 
