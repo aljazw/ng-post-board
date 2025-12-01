@@ -1,10 +1,45 @@
-# NgPostBoard
+# Post Board App (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
+This project is a **simple Angular application** for managing posts. It connects to a JSON Server backend to store and retrieve posts data.
 
-## Development server
+## ✨ Features
 
-To start a local development server, run:
+- **Dashboard**: Overview of all posts
+- **CRUD** functionality
+- **Lazy Loading**
+
+## 🛠️ Tech Stack
+
+- [Angular](https://angular.io/) – Frontend framework
+- [Angular Material](https://material.angular.dev/) – UI components & theming
+- JSON Server – Mock backend / REST API
+- TypeScript
+- HTML / SCSS
+
+## 📂 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/aljazw/ng-post-board.git
+cd ng-post-board
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Launch Mock Backend
+
+Run the following command to start a JSON Server for your mock database:
+
+```bash
+npx json-server --watch db.json --port 3000
+```
+
+### 4. Run the development server
 
 ```bash
 ng serve
@@ -12,48 +47,10 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## 🤝 Contributing
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+This is a mock project, but contributions, suggestions, and improvements are welcome. Feel free to fork, pull, or experiment with it.
 
-```bash
-ng generate component component-name
-```
+## 📄 License
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+_This project is licensed under the [MIT License](LICENSE)._
